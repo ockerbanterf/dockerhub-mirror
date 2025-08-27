@@ -1,0 +1,42 @@
+name: Mirror Dockerhub
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  mirror:
+    name: Mirror
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - image: node
+            repo: docker.io
+          - image: oblakstudio/redisinsight
+            repo: docker.io
+          - image: nginxinc/nginx-unprivileged
+            repo: docker.io
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ github.token }}
+      - uses: actions/setup-go@v5
+      - uses: imjasonh/setup-crane@v0.4
+      - name: Mirror
+        run: |
+          for tag in $(cat ./images/${{ matrix.repo }}/${{ matrix.image }}); do
+            crane copy \
+              ${{ matrix.repo }}/${{ matrix.image }}:$tag \
+              ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:$tag
+          done
