@@ -22,6 +22,8 @@ jobs:
             repo: docker.io
           - image: nginxinc/nginx-unprivileged
             repo: docker.io
+          - image: appsmith/appsmith-ce
+            repo: docker.io
     permissions:
       contents: read
       packages: write

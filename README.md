@@ -14,3 +14,4 @@ Mirrored Images:
 * [`node`](https://ghcr.io/ockerbanterf/node)
 * [`oblakstudio/redisinsight`](https://ghcr.io/ockerbanterf/oblakstudio/redisinsight)
 * [`nginxinc/nginx-unprivileged`](https://ghcr.io/ockerbanterf/nginxinc/nginx-unprivileged)
+* [`appsmith/appsmith-ce`](https://ghcr.io/ockerbanterf/appsmith/appsmith-ce)
