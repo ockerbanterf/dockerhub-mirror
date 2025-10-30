@@ -24,6 +24,8 @@ jobs:
             repo: docker.io
           - image: appsmith/appsmith-ce
             repo: docker.io
+          - image: matomo
+            repo: docker.io
     permissions:
       contents: read
       packages: write
