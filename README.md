@@ -16,3 +16,4 @@ Mirrored Images:
 * [`nginxinc/nginx-unprivileged`](https://ghcr.io/ockerbanterf/nginxinc/nginx-unprivileged)
 * [`appsmith/appsmith-ce`](https://ghcr.io/ockerbanterf/appsmith/appsmith-ce)
 * [`matomo`](https://ghcr.io/ockerbanterf/matomo)
+* [`clickhouse`](https://ghcr.io/ockerbanterf/clickhouse)
