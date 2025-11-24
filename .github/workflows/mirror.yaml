@@ -26,6 +26,8 @@ jobs:
             repo: docker.io
           - image: matomo
             repo: docker.io
+          - image: clickhouse
+            repo: docker.io
     permissions:
       contents: read
       packages: write
